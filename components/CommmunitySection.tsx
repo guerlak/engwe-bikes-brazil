@@ -3,9 +3,9 @@ import { Instagram, Youtube, Facebook } from 'lucide-react';
 
 export default function CommmunitySection() {
   const socialLinks = [
-    { icon: <Instagram className="w-6 h-6" />, href: 'https://instagram.com/engwebra', label: 'Instagram' },
-    { icon: <Youtube className="w-6 h-6" />, href: 'https://youtube.com/@engwe', label: 'YouTube' },
-    { icon: <Facebook className="w-6 h-6" />, href: 'https://facebook.com/engwe', label: 'Facebook' },
+    { icon: <Instagram className="w-6 h-6" />, href: 'https://instagram.com/engwebrasil', label: 'Instagram' },
+    { icon: <Youtube className="w-6 h-6" />, href: 'https://youtube.com/@engwebrasil', label: 'YouTube' },
+    { icon: <Facebook className="w-6 h-6" />, href: 'https://facebook.com/engwebrasil', label: 'Facebook' },
   ];
 
   return (

@@ -6,6 +6,7 @@ import { Features } from '@/components/features';
 import { VideoSection } from '@/components/video-section';
 import { Footer } from '@/components/footer';
 import CommmunitySection from '@/components/CommmunitySection';
+import { InternationalRecognition } from '@/components/InternationalRecognition';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ProductSection />
       <VideoSection />
       <CommmunitySection />
+      <InternationalRecognition />
       <Footer />
     </main>
   );

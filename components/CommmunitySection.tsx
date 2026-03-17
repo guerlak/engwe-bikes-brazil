@@ -1,6 +1,13 @@
 import Image from 'next/image';
+import { Instagram, Youtube, Facebook } from 'lucide-react';
 
 export default function CommmunitySection() {
+  const socialLinks = [
+    { icon: <Instagram className="w-6 h-6" />, href: 'https://instagram.com/engwebra', label: 'Instagram' },
+    { icon: <Youtube className="w-6 h-6" />, href: 'https://youtube.com/@engwe', label: 'YouTube' },
+    { icon: <Facebook className="w-6 h-6" />, href: 'https://facebook.com/engwe', label: 'Facebook' },
+  ];
+
   return (
     <section id="community" className="py-24 bg-white text-zinc-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,6 +24,20 @@ export default function CommmunitySection() {
               Nossas bicicletas não são apenas um meio de transporte, são um passaporte para a liberdade. Veja como nossa comunidade está explorando o mundo, desde trilhas urbanas até montanhas inexploradas.
             </p>
 
+            <div className="flex gap-4">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-400 hover:text-white hover:bg-orange-500 transition-all duration-300 shadow-sm"
+                  aria-label={link.label}
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4 mt-8">

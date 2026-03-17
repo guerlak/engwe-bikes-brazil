@@ -114,7 +114,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               {/* <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition-colors text-lg shadow-lg shadow-orange-500/20">
                 Adicionar ao Carrinho
               </button> */}
-              <a href={product.mktplaceLink} className="inline-flex items-center justify-center flex-1/2 bg-orange-400 hover:bg-orange-500 text-white font-bold py-4 rounded-xl transition-colors text-lg">
+              <a href={product.mktplaceLink} target='_blank' className="inline-flex items-center justify-center flex-1/2 bg-orange-400 hover:bg-orange-500 text-white font-bold py-4 rounded-xl transition-colors text-lg">
                 Comprar Agora
               </a>
             </div>

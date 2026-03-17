@@ -16,10 +16,6 @@ export default function Home() {
       <ProductSection />
       <VideoSection />
       <CommmunitySection />
-      
-      {/* Community / Lifestyle Section */}
-
-
       <Footer />
     </main>
   );

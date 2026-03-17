@@ -4,3 +4,9 @@
   --font-sans: var(--font-inter);
   --font-display: var(--font-space);
 }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}

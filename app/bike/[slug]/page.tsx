@@ -1,9 +1,9 @@
 import { PRODUCTS } from '@/lib/data';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Star, Truck, ShieldCheck, RotateCcw, Check, ArrowLeft, Quote } from 'lucide-react';
+import { ProductGallery } from '@/components/product-gallery';
 
 
 export async function generateStaticParams() {
@@ -43,44 +43,18 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Image Gallery Section */}
-          <div className="space-y-4">
-            <div className="aspect-[4/3] bg-zinc-100 rounded-3xl overflow-hidden relative">
-              <Image
-                src={product.images?.[0]}
-                alt={product.name}
-                fill
-                className="object-cover"
-                priority
-              />
-              {product.tag && (
-                <div className="absolute top-6 left-6 bg-orange-500 text-white text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wider">
-                  {product.tag}
-                </div>
-              )}
-            </div>
-            <div className="grid grid-cols-4 gap-4">
-              {(product.images).map((img, i) => (
-                <div key={i} className="aspect-square bg-zinc-100 rounded-xl overflow-hidden relative cursor-pointer hover:ring-2 ring-orange-500 transition-all">
-                  <Image
-                    src={img}
-                    alt={`${product.name} view ${i + 1}`}
-                    fill
-                    className="object-cover opacity-80 hover:opacity-100 transition-opacity"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <ProductGallery images={product.images} name={product.name} tag={product.tag} />
 
           {/* Product Info Section */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex text-orange-400">
+              <Link href={`#reviews`} className="flex text-orange-400">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'fill-current' : 'text-zinc-200 fill-zinc-200'}`} />
                 ))}
-              </div>
-              <span className="text-sm text-zinc-500 font-medium">{product.reviews} Avaliações</span>
+
+                <span className="text-sm text-zinc-500 font-medium ml-1">{product.testimonials.length} Avaliações</span>
+              </Link>
             </div>
 
             <h1 className="font-display text-4xl md:text-5xl font-bold text-zinc-900 mb-4">
@@ -140,51 +114,47 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               {/* <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition-colors text-lg shadow-lg shadow-orange-500/20">
                 Adicionar ao Carrinho
               </button> */}
-              <button className="flex-1 bg-zinc-100 hover:bg-zinc-200 text-zinc-900 font-bold py-4 rounded-xl transition-colors text-lg">
+              <a href={product.mktplaceLink} className="inline-flex items-center justify-center flex-1/2 bg-orange-400 hover:bg-orange-500 text-white font-bold py-4 rounded-xl transition-colors text-lg">
                 Comprar Agora
-              </button>
+              </a>
             </div>
 
             {/* Trust Badges */}
-            <div className="grid grid-cols-3 gap-4 py-6 border-t border-zinc-100">
-              {/* <div className="flex flex-col items-center text-center">
-                <Truck className="w-6 h-6 text-zinc-400 mb-2" />
-                <span className="text-xs font-medium text-zinc-600">Frete Grátis</span>
-              </div> */}
-              {/* <div className="flex flex-col items-center text-center">
-                <ShieldCheck className="w-6 h-6 text-zinc-400 mb-2" />
-                <span className="text-xs font-medium text-zinc-600">Garantia de 1 Ano</span>
-              </div> */}
-              <div className="flex flex-col items-center text-center">
-                <RotateCcw className="w-6 h-6 text-zinc-400 mb-2" />
-                <span className="text-xs font-medium text-zinc-600">Devolução Fácil</span>
-              </div>
-            </div>
+
           </div>
         </div>
 
-        {/* Testimonial Section */}
-        {product.testimonial && (
-          <div className="mt-24 bg-zinc-50 rounded-[3rem] p-8 md:p-16 relative overflow-hidden">
-            <Quote className="absolute top-12 left-12 w-24 h-24 text-zinc-100 -z-0" />
-            <div className="relative z-10 max-w-3xl mx-auto text-center">
-              <div className="flex justify-center text-orange-400 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={`w-6 h-6 ${i < product.testimonial.rating ? 'fill-current' : 'text-zinc-200'}`} />
-                ))}
-              </div>
-              <blockquote className="text-2xl md:text-3xl font-display font-medium text-zinc-900 leading-relaxed mb-8 italic">
-                "{product.testimonial.phrase}"
-              </blockquote>
-              <div className="flex flex-col items-center">
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold mb-3">
-                  {product.testimonial.name.charAt(0)}
+        {/* Testimonials Section */}
+        {product.testimonials && (
+          <div className="mt-16 max-w-5xl mx-auto" id="reviews">
+            <h3 className="text-2xl font-bold text-zinc-900 mb-10 text-center">O que nossos clientes dizem</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {product.testimonials.map((t, i) => (
+                <div key={i} className="bg-zinc-50 rounded-2xl p-6 relative overflow-hidden border border-zinc-100 shadow-sm flex flex-col justify-between">
+                  <Quote className="absolute top-4 right-4 w-8 h-8 text-zinc-200/50 -z-0" />
+                  <div className="relative z-10">
+                    <div className="flex text-orange-400 mb-3">
+                      {[...Array(5)].map((_, starIndex) => (
+                        <Star key={starIndex} className={`w-4 h-4 ${starIndex < t.rating ? 'fill-current' : 'text-zinc-200'}`} />
+                      ))}
+                    </div>
+                    <blockquote className="text-zinc-700 leading-relaxed mb-6 italic text-sm md:text-base">
+                      "{t.phrase}"
+                    </blockquote>
+                  </div>
+                  <div className="relative z-10 flex items-center gap-3 mt-auto">
+                    <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold text-xs">
+                      {t.name.charAt(0)}
+                    </div>
+                    <div>
+                      <cite className="not-italic font-bold text-zinc-900 text-sm block leading-none mb-1">
+                        {t.name}
+                      </cite>
+                      <span className="text-zinc-500 text-[10px] uppercase font-bold tracking-wider">Cliente Verificado</span>
+                    </div>
+                  </div>
                 </div>
-                <cite className="not-italic font-bold text-zinc-900 tracking-tight">
-                  {product.testimonial.name}
-                </cite>
-                <span className="text-zinc-500 text-sm">Cliente Engwe Brasil</span>
-              </div>
+              ))}
             </div>
           </div>
         )}

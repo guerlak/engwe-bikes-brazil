@@ -10,6 +10,7 @@ interface ProductProps {
   oldPrice?: number;
   rating: number;
   reviews: number;
+  mktplaceLink: string;
   specs: {
     speed: string;
     range: string;

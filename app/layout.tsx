@@ -17,6 +17,9 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'Engwe Brasil Concept - Bicicletas Elétricas de Alta Performance',
   description: 'Explore o mundo com as melhores bicicletas elétricas fat-tire. Potência, estilo e liberdade.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

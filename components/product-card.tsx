@@ -10,7 +10,6 @@ interface ProductProps {
   oldPrice?: number;
   rating: number;
   reviews: number;
-  image: string;
   specs: {
     speed: string;
     range: string;
@@ -23,7 +22,7 @@ interface ProductProps {
 export function ProductCard({ product }: { product: ProductProps }) {
   return (
     <Link href={`/bike/${product.slug}`} className="">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -82,7 +81,7 @@ export function ProductCard({ product }: { product: ProductProps }) {
           </div>
 
           <div className="flex justify-center">
-           
+
             <span className="bg-zinc-900 text-white px-4 py-2 rounded-lg text-sm font-medium group-hover:bg-orange-500 transition-colors">
               Ver Detalhes
             </span>

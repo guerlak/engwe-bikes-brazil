@@ -5,7 +5,7 @@ export const PRODUCTS = [
     price: 6999,
     oldPrice: 7999,
     rating: 4.8,
-    reviews: 124,
+    reviews: 2,
 
     tag: 'Premium',
     description: 'A Engwe M20 foi projetada para aventuras sem limites. Com seu design inspirado em motos clássicas e sistema de bateria dupla opcional, ela oferece uma autonomia impressionante e um estilo inconfundível.',
@@ -24,6 +24,11 @@ export const PRODUCTS = [
       'Design robusto em liga de alumínio',
       'Câmbio Shimano de 7 velocidades'
     ],
+    testimonial: {
+      name: 'Ricardo Silva',
+      phrase: 'A melhor bicicleta elétrica que já tive. O design é impecável e a potência me surpreendeu positivamente em todas as subidas.',
+      rating: 5
+    },
     images: [
       '/images/bikes/engine-x/engine-x-vermelha-001.png',
     ]
@@ -34,7 +39,7 @@ export const PRODUCTS = [
     price: 5999,
     oldPrice: 6999,
     rating: 4.9,
-    reviews: 856,
+    reviews: 3,
     tag: 'Premium',
     description: 'A EP-2 Pro é a definição de versatilidade. Dobrável, potente e capaz de enfrentar qualquer terreno, é a companheira perfeita para o dia a dia na cidade ou escapadas no fim de semana.',
     specs: {
@@ -52,6 +57,11 @@ export const PRODUCTS = [
       'Freios a disco mecânicos',
       'Quadro em alumínio 6061'
     ],
+    testimonial: {
+      name: 'Juliana Mendes',
+      phrase: 'Prática e muito potente. O fato de ser dobrável facilita muito o transporte no meu carro, e no asfalto ela voa!',
+      rating: 5
+    },
     images: [
       '/images/bikes/m1/engwe-m1-verde-001.png',
     ]
@@ -62,7 +72,7 @@ export const PRODUCTS = [
     price: 8499,
     oldPrice: 9999,
     rating: 4.7,
-    reviews: 342,
+    reviews: 4,
 
     tag: 'Dobrável',
     description: 'Para quem exige o máximo. A Engine Pro traz suspensão integral, freios hidráulicos e um sistema de regeneração de energia (I-ERS) para uma experiência de pilotagem superior.',
@@ -81,6 +91,11 @@ export const PRODUCTS = [
       'Sistema de regeneração de energia',
       'Display colorido'
     ],
+    testimonial: {
+      name: 'Marcos Oliveira',
+      phrase: 'Conforto absoluto com a suspensão integral. Parece que estou andando em uma nuvem, mesmo em terrenos irregulares.',
+      rating: 5
+    },
     images: [
       '/images/bikes/Engine-x/engine-x-vermelha-001.png',
     ]

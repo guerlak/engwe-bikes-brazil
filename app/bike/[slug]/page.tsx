@@ -3,7 +3,7 @@ import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Star, Truck, ShieldCheck, RotateCcw, Check, ArrowLeft } from 'lucide-react';
+import { Star, Truck, ShieldCheck, RotateCcw, Check, ArrowLeft, Quote } from 'lucide-react';
 
 
 export async function generateStaticParams() {
@@ -34,11 +34,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <div className="bg-zinc-900">
         <Navbar />
       </div>
-      
+
       <div className="pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href="/#bikes" className="inline-flex items-center text-zinc-500 hover:text-orange-500 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
-          Voltar para E-Bikes
+          Voltar
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -107,13 +107,13 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               {Object.entries(product.specs).map(([key, value]) => (
                 <div key={key} className="bg-zinc-50 p-4 rounded-xl border border-zinc-100">
                   <p className="text-xs text-zinc-500 uppercase font-bold mb-1">
-                    {key === 'speed' ? 'Velocidade' : 
-                     key === 'range' ? 'Autonomia' :
-                     key === 'power' ? 'Potência' :
-                     key === 'battery' ? 'Bateria' :
-                     key === 'tires' ? 'Pneus' :
-                     key === 'weight' ? 'Peso' :
-                     key === 'chargeTime' ? 'Tempo de Carga' : key}
+                    {key === 'speed' ? 'Velocidade' :
+                      key === 'range' ? 'Autonomia' :
+                        key === 'power' ? 'Potência' :
+                          key === 'battery' ? 'Bateria' :
+                            key === 'tires' ? 'Pneus' :
+                              key === 'weight' ? 'Peso' :
+                                key === 'chargeTime' ? 'Tempo de Carga' : key}
                   </p>
                   <p className="font-semibold text-zinc-900">{value}</p>
                 </div>
@@ -147,10 +147,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
             {/* Trust Badges */}
             <div className="grid grid-cols-3 gap-4 py-6 border-t border-zinc-100">
-              <div className="flex flex-col items-center text-center">
+              {/* <div className="flex flex-col items-center text-center">
                 <Truck className="w-6 h-6 text-zinc-400 mb-2" />
                 <span className="text-xs font-medium text-zinc-600">Frete Grátis</span>
-              </div>
+              </div> */}
               {/* <div className="flex flex-col items-center text-center">
                 <ShieldCheck className="w-6 h-6 text-zinc-400 mb-2" />
                 <span className="text-xs font-medium text-zinc-600">Garantia de 1 Ano</span>
@@ -162,6 +162,32 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </div>
           </div>
         </div>
+
+        {/* Testimonial Section */}
+        {product.testimonial && (
+          <div className="mt-24 bg-zinc-50 rounded-[3rem] p-8 md:p-16 relative overflow-hidden">
+            <Quote className="absolute top-12 left-12 w-24 h-24 text-zinc-100 -z-0" />
+            <div className="relative z-10 max-w-3xl mx-auto text-center">
+              <div className="flex justify-center text-orange-400 mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className={`w-6 h-6 ${i < product.testimonial.rating ? 'fill-current' : 'text-zinc-200'}`} />
+                ))}
+              </div>
+              <blockquote className="text-2xl md:text-3xl font-display font-medium text-zinc-900 leading-relaxed mb-8 italic">
+                "{product.testimonial.phrase}"
+              </blockquote>
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold mb-3">
+                  {product.testimonial.name.charAt(0)}
+                </div>
+                <cite className="not-italic font-bold text-zinc-900 tracking-tight">
+                  {product.testimonial.name}
+                </cite>
+                <span className="text-zinc-500 text-sm">Cliente Engwe Brasil</span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
       <Footer />
     </main>

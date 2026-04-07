@@ -60,10 +60,9 @@ export function InternationalRecognition() {
             >
               {/* Logo Placeholder - Text based styling to look like press logos */}
               <div className="mb-6 h-8 flex items-center justify-center">
-                <span className={`text-2xl font-black tracking-tighter text-zinc-300 group-hover:text-zinc-900 transition-colors uppercase ${
-                  item.company === 'C-NET' ? 'font-sans' :
-                    item.company === 'Forbes' ? 'font-serif italic' :
-                      item.company === 'The Verge' ? 'font-display' : 'font-sans'
+                <span className={`text-2xl font-black tracking-tighter text-zinc-400 group-hover:text-zinc-900 transition-colors uppercase ${item.company === 'C-NET' ? 'font-sans' :
+                  item.company === 'Forbes' ? 'font-serif italic' :
+                    item.company === 'The Verge' ? 'font-display' : 'font-sans'
                   }`}>
                   {item.company}
                 </span>

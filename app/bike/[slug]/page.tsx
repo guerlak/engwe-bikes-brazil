@@ -31,10 +31,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
   return (
     <main className="min-h-screen bg-white">
-      <div className="bg-zinc-900">
-        <Navbar />
-      </div>
-
       <div className="pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href="/#bikes" className="inline-flex items-center text-zinc-500 hover:text-orange-500 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -159,7 +155,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
         )}
       </div>
-      <Footer />
     </main>
   );
 }

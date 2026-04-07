@@ -26,7 +26,7 @@ export function Footer() {
               <Link href="#" className="text-zinc-400 hover:text-white transition-colors">
                 <Youtube className="w-5 h-5" />
               </Link>
-             
+
             </div>
           </div>
 
@@ -34,9 +34,9 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-6">Produtos</h4>
             <ul className="space-y-4 text-sm text-zinc-400">
-              <li><Link href="#" className="hover:text-orange-500 transition-colors">Todas as E-Bikes</Link></li>
-              <li><Link href="#" className="hover:text-orange-500 transition-colors">Série M1</Link></li>
-              <li><Link href="#" className="hover:text-orange-500 transition-colors">Série Engine-X</Link></li>
+              <li><Link href="/#bikes" className="hover:text-orange-500 transition-colors">Todas as E-Bikes</Link></li>
+              <li><Link href="/bike/engwe-m1" className="hover:text-orange-500 transition-colors">Série M1</Link></li>
+              <li><Link href="/bike/engwe-engine-x" className="hover:text-orange-500 transition-colors">Série Engine-X</Link></li>
               <li><Link href="#" className="hover:text-orange-500 transition-colors">Acessórios</Link></li>
               <li><Link href="#" className="hover:text-orange-500 transition-colors">Peças de Reposição</Link></li>
             </ul>
@@ -49,7 +49,6 @@ export function Footer() {
               <li><Link href="#" className="hover:text-orange-500 transition-colors">Central de Ajuda</Link></li>
               <li><Link href="#" className="hover:text-orange-500 transition-colors">Manuais</Link></li>
               <li><Link href="#" className="hover:text-orange-500 transition-colors">Garantia</Link></li>
-              <li><Link href="#" className="hover:text-orange-500 transition-colors">Rastrear Pedido</Link></li>
               <li><Link href="#" className="hover:text-orange-500 transition-colors">Política de Devolução</Link></li>
             </ul>
           </div>
@@ -63,9 +62,9 @@ export function Footer() {
             <form className="space-y-3">
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
-                <input 
-                  type="email" 
-                  placeholder="Seu melhor email" 
+                <input
+                  type="email"
+                  placeholder="Seu melhor email"
                   className="w-full bg-zinc-800 border border-zinc-700 rounded-lg py-3 pl-10 pr-4 text-sm text-white focus:outline-none focus:border-orange-500 transition-colors"
                 />
               </div>
@@ -83,7 +82,7 @@ export function Footer() {
           <div className="flex gap-6 text-xs text-zinc-500">
             <Link href="#" className="hover:text-white transition-colors">Privacidade</Link>
             <Link href="#" className="hover:text-white transition-colors">Termos</Link>
-            <Link href="#" className="hover:text-white transition-colors">Cookies</Link>
+
           </div>
         </div>
       </div>

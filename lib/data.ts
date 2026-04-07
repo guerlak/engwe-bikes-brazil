@@ -1,4 +1,32 @@
-export const PRODUCTS = [
+export interface Product {
+  slug: string;
+  name: string;
+  price: number;
+  oldPrice?: number;
+  rating: number;
+  reviews: number;
+  mktplaceLink: string;
+  tag: string;
+  description: string;
+  specs: {
+    speed: string;
+    range: string;
+    power: string;
+    battery: string;
+    tires: string;
+    weight: string;
+    chargeTime: string;
+  };
+  features: string[];
+  testimonials: {
+    name: string;
+    phrase: string;
+    rating: number;
+  }[];
+  images: Record<string, string[]>;
+}
+
+export const PRODUCTS: Product[] = [
 
   {
     slug: 'engwe-m1',
@@ -9,9 +37,10 @@ export const PRODUCTS = [
     reviews: 3,
     mktplaceLink: 'https://mercadolivre.com.br',
     tag: 'Premium',
-    description: 'A EP-2 Pro é a definição de versatilidade. Dobrável, potente e capaz de enfrentar qualquer terreno, é a companheira perfeita para o dia a dia na cidade ou escapadas no fim de semana.',
+    description: 'A EP-2 Pro é a definição de versatilidade. Dobrável, potente e capaz de enfrentar qualquer terreno,'+
+     'é a companheira perfeita para o dia a dia na cidade ou escapadas no fim de semana.',
     specs: {
-      speed: '40 km/h',
+      speed: '32 km/h',
       range: '120 km',
       power: '750W',
       battery: '48V 13Ah',
@@ -45,16 +74,13 @@ export const PRODUCTS = [
         name: 'Felipe Rocha',
         phrase: 'Display muito intuitivo e fácil de usar. Bateria dura bastante.',
         rating: 4
-      },
-      {
-        name: 'Sofia Alencar',
-        phrase: 'Melhor investimento que fiz este ano para minha mobilidade.',
-        rating: 5
       }
     ],
-    images: [
-      '/images/bikes/m1/engwe-m1-verde-001.png',
-    ]
+    images: {
+      verde: [
+        '/images/bikes/m1/engwe-m1-verde-001.png',
+      ]
+    }
   },
   {
     slug: 'engwe-engine-x',
@@ -68,7 +94,7 @@ export const PRODUCTS = [
     tag: 'Dobrável',
     description: 'Para quem exige o máximo. A Engine Pro traz suspensão integral, freios hidráulicos e um sistema de regeneração de energia (I-ERS) para uma experiência de pilotagem superior.',
     specs: {
-      speed: '50 km/h',
+      speed: '32 km/h',
       range: '100 km',
       power: '1000W (Pico)',
       battery: '48V 16Ah',
@@ -109,10 +135,15 @@ export const PRODUCTS = [
         rating: 5
       }
     ],
-    images: [
-      '/images/bikes/engine-x/engine-x-vermelha-001.png',
-      '/images/bikes/engine-x/engine-x-002.png',
-      '/images/bikes/engine-x/engine-x-003.png',
-    ]
+    images: {
+      preta: [
+        '/images/bikes/engine-x/engine-x-preta-001.png',
+        '/images/bikes/engine-x/engine-x-preta-002.png',
+      ],
+      vermelha: [
+        '/images/bikes/engine-x/engine-x-vermelha-001.png',
+        '/images/bikes/engine-x/engine-x-vermelha-002.png',
+      ],
+    }
   },
 ];

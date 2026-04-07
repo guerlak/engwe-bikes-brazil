@@ -17,7 +17,7 @@ interface ProductProps {
     power: string;
   };
   tag?: string;
-  images: string[];
+  images: Record<string, string[]>;
 }
 
 export function ProductCard({ product }: { product: ProductProps }) {
@@ -27,7 +27,7 @@ export function ProductCard({ product }: { product: ProductProps }) {
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="group relative bg-white rounded-2xl overflow-hidden border border-zinc-100 hover:border-orange-500/30 hover:shadow-xl transition-all duration-300 h-full flex flex-col"
+        className="group relative bg-white rounded-2xl overflow-hidden border-2 border-zinc-100 hover:border-orange-500/30 hover:shadow-xl transition-all duration-300 h-full flex flex-col"
       >
         {/* Badge */}
         {product.tag && (
@@ -39,7 +39,7 @@ export function ProductCard({ product }: { product: ProductProps }) {
         {/* Image */}
         <div className="relative aspect-[4/3] bg-zinc-50 overflow-hidden">
           <Image
-            src={product.images?.[0]}
+            src={Object.values(product.images)[0][0]}
             alt={product.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -48,15 +48,6 @@ export function ProductCard({ product }: { product: ProductProps }) {
 
         {/* Content */}
         <div className="p-6 flex flex-col flex-grow">
-          {/* <div className="flex items-center gap-1 mb-2">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className={`w-3 h-3 ${i < Math.floor(product.rating) ? 'fill-orange-400 text-orange-400' : 'fill-zinc-200 text-zinc-200'}`}
-              />
-            ))}
-            <span className="text-xs text-zinc-400 ml-1">({product.reviews})</span>
-          </div> */}
 
           <h3 className="font-display text-xl font-bold text-zinc-900 mb-2 group-hover:text-orange-600 transition-colors">
             {product.name}

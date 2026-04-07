@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import Image from 'next/image';
 import logo from '@/public/logo.png';
 
-export function Navbar() {
+export function NavbarNested() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -32,11 +32,9 @@ export function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ?
-        'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'
-        }`}
+      className={`fixed w-full z-50 transition-all duration-300 p-5 bg-white border-b border-zinc-100`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
@@ -49,8 +47,7 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-orange-500 ${scrolled ? 'text-zinc-800' : 'text-white/90'
-                  }`}
+                className={`text-sm font-medium transition-colors hover:text-orange-500 text-zinc-800`}
               >
                 {link.name}
               </Link>
@@ -59,7 +56,8 @@ export function Navbar() {
               href={whatsappLink.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-2 text-sm font-medium transition-colors hover:text-orange-500 ${scrolled ? 'text-zinc-800' : 'text-white/90'
+              className={`flex items-center gap-2 text-sm font-medium transition-colors hover:text-orange-500 
+                ${scrolled ? 'text-zinc-800' : 'text-zinc-800'
                 }`}
             >
               <svg className="w-5 h-5 fill-current text-green-500" viewBox="0 0 24 24">
@@ -68,22 +66,6 @@ export function Navbar() {
               Suporte
             </a>
           </div>
-
-          {/* Icons */}
-          {/* <div className="hidden md:flex items-center space-x-6">
-            <button className={`transition-colors hover:text-orange-500 ${scrolled ? 'text-zinc-800' : 'text-white'}`}>
-              <Search className="w-5 h-5" />
-            </button>
-            <button className={`transition-colors hover:text-orange-500 ${scrolled ? 'text-zinc-800' : 'text-white'}`}>
-              <User className="w-5 h-5" />
-            </button>
-            <button className={`relative transition-colors hover:text-orange-500 ${scrolled ? 'text-zinc-800' : 'text-white'}`}>
-              <ShoppingCart className="w-5 h-5" />
-              <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">
-                0
-              </span>
-            </button>
-          </div> */}
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
@@ -138,6 +120,6 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </nav >
   );
 }

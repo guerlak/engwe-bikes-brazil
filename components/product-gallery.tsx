@@ -5,13 +5,16 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface ProductGalleryProps {
-  images: string[];
+  images: Record<string, string[]>;
   name: string;
   tag?: string;
 }
 
 export function ProductGallery({ images, name, tag }: ProductGalleryProps) {
-  const [activeImage, setActiveImage] = useState(images[0]);
+  const colors = Object.keys(images);
+  const [selectedColor, setSelectedColor] = useState(colors[0]);
+  const currentImages = images[selectedColor];
+  const [activeImage, setActiveImage] = useState(currentImages[0]);
 
   return (
     <div className="space-y-4">
@@ -35,7 +38,7 @@ export function ProductGallery({ images, name, tag }: ProductGalleryProps) {
             />
           </motion.div>
         </AnimatePresence>
-        
+
         {tag && (
           <div className="absolute top-6 left-6 bg-orange-500 text-white text-sm font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg z-20">
             {tag}
@@ -43,26 +46,47 @@ export function ProductGallery({ images, name, tag }: ProductGalleryProps) {
         )}
       </div>
 
-      {/* Thumbnails */}
-      <div className="grid grid-cols-4 gap-4">
-        {images.map((img, i) => (
-          <button
-            key={i}
-            onClick={() => setActiveImage(img)}
-            className={`aspect-square bg-zinc-50 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-300 ${
-              activeImage === img 
-                ? 'ring-2 ring-orange-500 scale-95 shadow-md z-10' 
+      {/* Thumbnails & Color Selector */}
+      <div className="space-y-4">
+        {colors.length > 1 && (
+          <div className="flex gap-2">
+            {colors.map((color) => (
+              <button
+                key={color}
+                onClick={() => {
+                  setSelectedColor(color);
+                  setActiveImage(images[color][0]);
+                }}
+                className={`px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${selectedColor === color
+                  ? 'bg-zinc-900 text-white shadow-lg'
+                  : 'bg-zinc-100 text-zinc-500 hover:bg-zinc-200'
+                  }`}
+              >
+                {color}
+              </button>
+            ))}
+          </div>
+        )}
+
+        <div className="grid grid-cols-4 gap-4">
+          {currentImages.map((img, i) => (
+            <button
+              key={i}
+              onClick={() => setActiveImage(img)}
+              className={`aspect-square bg-zinc-50 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-300 ${activeImage === img
+                ? 'ring-2 ring-orange-500 scale-95 shadow-md z-10'
                 : 'hover:ring-2 ring-orange-500/30 opacity-60 hover:opacity-100'
-            }`}
-          >
-            <Image
-              src={img}
-              alt={`${name} view ${i + 1}`}
-              fill
-              className="object-cover"
-            />
-          </button>
-        ))}
+                }`}
+            >
+              <Image
+                src={img}
+                alt={`${name} view ${i + 1}`}
+                fill
+                className="object-cover"
+              />
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

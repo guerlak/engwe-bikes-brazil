@@ -19,7 +19,7 @@ export function ProductGallery({ images, name, tag }: ProductGalleryProps) {
   return (
     <div className="space-y-4">
       {/* Main Image */}
-      <div className="aspect-[4/3] bg-zinc-100 rounded-3xl overflow-hidden relative shadow-inner group">
+      <div className="aspect-[4/4] bg-zinc-100 rounded-3xl overflow-hidden relative shadow-inner group">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeImage}
@@ -50,21 +50,28 @@ export function ProductGallery({ images, name, tag }: ProductGalleryProps) {
       <div className="space-y-4">
         {colors.length > 1 && (
           <div className="flex gap-2">
-            {colors.map((color) => (
-              <button
-                key={color}
-                onClick={() => {
-                  setSelectedColor(color);
-                  setActiveImage(images[color][0]);
-                }}
-                className={`px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${selectedColor === color
-                  ? 'bg-zinc-900 text-white shadow-lg'
-                  : 'bg-zinc-100 text-zinc-500 hover:bg-zinc-200'
-                  }`}
-              >
-                {color}
-              </button>
-            ))}
+            {colors.map((color) => {
+              const isSelected = selectedColor === color;
+              const bgColor = color === 'preta' ? 'bg-zinc-900' : 'bg-red-500';
+
+              return (
+                <button
+                  key={color}
+                  onClick={() => {
+                    setSelectedColor(color);
+                    setActiveImage(images[color][0]);
+                  }}
+                  className={`px-3 py-3 rounded-full transition-all cursor-pointer border-2
+                    ${bgColor} text-white
+                    ${isSelected
+                      ? 'ring-2 ring-orange-400/50 scale-105 shadow-lg'
+                      : 'border-transparent opacity-70 hover:opacity-100'
+                    }`}
+                >
+
+                </button>
+              );
+            })}
           </div>
         )}
 

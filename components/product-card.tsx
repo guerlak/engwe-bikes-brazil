@@ -37,7 +37,7 @@ export function ProductCard({ product }: { product: ProductProps }) {
         )}
 
         {/* Image */}
-        <div className="relative aspect-[4/3] bg-zinc-50 overflow-hidden">
+        <div className="relative aspect-[4/4] bg-zinc-50 overflow-hidden">
           <Image
             src={Object.values(product.images)[0][0]}
             alt={product.name}

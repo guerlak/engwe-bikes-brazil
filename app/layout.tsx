@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="font-sans antialiased bg-white text-zinc-900 selection:bg-orange-500 selection:text-white">
-        <NavbarNested />
+
         {children}
         <Footer />
       </body>

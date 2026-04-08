@@ -4,6 +4,7 @@ import { Footer } from '@/components/footer';
 import Link from 'next/link';
 import { Star, Truck, ShieldCheck, RotateCcw, Check, ArrowLeft, Quote } from 'lucide-react';
 import { ProductGallery } from '@/components/product-gallery';
+import { NavbarNested } from '@/components/navbarNested';
 
 
 export async function generateStaticParams() {
@@ -31,6 +32,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
   return (
     <main className="min-h-screen bg-white">
+      <NavbarNested />
       <div className="pt-32 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href="/#bikes" className="inline-flex items-center text-zinc-500 hover:text-orange-500 mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
@@ -107,9 +109,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
             {/* Actions */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              {/* <button className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition-colors text-lg shadow-lg shadow-orange-500/20">
-                Adicionar ao Carrinho
-              </button> */}
+
               <a href={product.mktplaceLink} target='_blank' className="inline-flex items-center justify-center flex-1/2 bg-orange-400 hover:bg-orange-500 text-white font-bold py-4 rounded-xl transition-colors text-lg">
                 Comprar Agora
               </a>

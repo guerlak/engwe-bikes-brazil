@@ -5,7 +5,7 @@ export default function CommmunitySection() {
   const socialLinks = [
     { icon: <Instagram className="w-6 h-6" />, href: 'https://instagram.com/engwebrasil', label: 'Instagram' },
     { icon: <Youtube className="w-6 h-6" />, href: 'https://youtube.com/@engwebrasil', label: 'YouTube' },
-    { icon: <Facebook className="w-6 h-6" />, href: 'https://facebook.com/engwebrasil', label: 'Facebook' },
+    // { icon: <Facebook className="w-6 h-6" />, href: 'https://facebook.com/engwebrasil', label: 'Facebook' },
   ];
 
   return (
@@ -17,8 +17,8 @@ export default function CommmunitySection() {
               Comunidade Engwe
             </span>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Junte-se a Milhares de <br />
-              Aventureiros pelo Mundo.
+              Sua próxima aventura começa no feed.<br />
+
             </h2>
             <p className="text-zinc-500 text-lg mb-8 leading-relaxed">
               Nossas bicicletas não são apenas um meio de transporte, são um passaporte para a liberdade. Veja como nossa comunidade está explorando o mundo, desde trilhas urbanas até montanhas inexploradas.
@@ -62,7 +62,7 @@ export default function CommmunitySection() {
             <div className="space-y-4">
               <div className="aspect-square bg-zinc-100 rounded-2xl overflow-hidden relative group">
                 <Image
-                  src="/images/home/bike-pessoa-001.png"
+                  src="/images/home/bike-pessoa-003.png"
                   alt="Lifestyle 3"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -70,7 +70,7 @@ export default function CommmunitySection() {
               </div>
               <div className="aspect-[3/4] bg-zinc-100 rounded-2xl overflow-hidden relative group">
                 <Image
-                  src="/images/home/bike-pessoa-002.png"
+                  src="/images/home/bike-pessoa-004.png"
                   alt="Lifestyle 4"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"

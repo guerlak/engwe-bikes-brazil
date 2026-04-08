@@ -44,7 +44,7 @@ export function InternationalRecognition() {
             transition={{ delay: 0.1 }}
             className="text-zinc-500 text-lg max-w-2xl mx-auto"
           >
-            O que a imprensa especializada e as maiores autoridades globais dizem sobre a Engwe em todo o mundo.
+            O que a imprensa especializada e as maiores autoridades globais dizem sobre a <strong>ENGWE</strong> em todo o mundo.
           </motion.p>
         </div>
 

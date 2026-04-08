@@ -49,7 +49,7 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-orange-500 ${scrolled ? 'text-zinc-800' : 'text-white/90'
+                className={`text-md font-medium transition-colors hover:text-orange-500 ${scrolled ? 'text-zinc-700' : 'text-white/90'
                   }`}
               >
                 {link.name}

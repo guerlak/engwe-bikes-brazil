@@ -27,7 +27,6 @@ export interface Product {
 }
 
 export const PRODUCTS: Product[] = [
-
   {
     slug: 'engwe-m1',
     name: 'Engwe M1',
@@ -79,6 +78,7 @@ export const PRODUCTS: Product[] = [
     images: {
       verde: [
         '/images/bikes/m1/engwe-m1-verde-001.png',
+        '/images/bikes/m1/engwe-m1-black-002.png',
       ]
     }
   },
@@ -137,12 +137,13 @@ export const PRODUCTS: Product[] = [
     ],
     images: {
       preta: [
-        '/images/bikes/engine-x/engine-x-preta-001.png',
-        '/images/bikes/engine-x/engine-x-preta-002.png',
+        '/images/bikes/engine-x/engine-x-black-001.jpg',
+        '/images/bikes/engine-x/engine-x-black-002.jpg',
+        '/images/bikes/engine-x/engine-x-black-003.jpg',
       ],
       vermelha: [
-        '/images/bikes/engine-x/engine-x-vermelha-001.png',
-        '/images/bikes/engine-x/engine-x-vermelha-002.png',
+        '/images/bikes/engine-x/engine-x-red-001.jpg',
+        '/images/bikes/engine-x/engine-x-red-002.jpg'
       ],
     }
   },

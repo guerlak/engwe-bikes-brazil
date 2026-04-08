@@ -3,7 +3,7 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
-import heroImage from '@/public/engwe-hero.png';
+import heroImage from '@/public/images/home/engine-x-hero.jpg';
 
 export function Hero() {
   return (
@@ -17,7 +17,7 @@ export function Hero() {
           className="object-cover opacity-60"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/10 to-transparent" />
       </div>
 
       {/* Content */}
@@ -38,7 +38,7 @@ export function Hero() {
           <p className="text-lg md:text-xl text-zinc-300 mb-10 max-w-xl leading-relaxed">
             Descubra a liberdade com as bicicletas elétricas mais potentes e versáteis do mercado. Projetadas para qualquer terreno, construídas para a aventura.
           </p>
-          
+
           {/* <div className="flex flex-col sm:flex-row gap-4">
             <button className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full transition-all flex items-center justify-center gap-2 group">
               Comprar Agora
@@ -52,7 +52,7 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}

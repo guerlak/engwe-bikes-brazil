@@ -20,7 +20,7 @@ export function NavbarNested() {
   }, []);
 
   const navLinks = [
-    { name: 'E-Bikes', href: '#bikes' },
+    { name: 'E-Bikes', href: '/#bikes' },
 
   ];
 
@@ -47,7 +47,7 @@ export function NavbarNested() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-orange-500 text-zinc-800`}
+                className={`text-md font-medium transition-colors hover:text-orange-500 text-zinc-700`}
               >
                 {link.name}
               </Link>

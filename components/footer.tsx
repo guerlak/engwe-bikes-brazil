@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Facebook, Instagram, Twitter, Youtube, Mail } from 'lucide-react';
-import logo from '@/public/logo.png';
+import logo from '@/public/logo-white.png';
 import Image from 'next/image';
 
 export function Footer() {
@@ -48,7 +48,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-zinc-400">
               <li><Link href="#" className="hover:text-orange-500 transition-colors">Central de Ajuda</Link></li>
               <li><Link href="#" className="hover:text-orange-500 transition-colors">Manuais</Link></li>
-              <li><Link href="#" className="hover:text-orange-500 transition-colors">Garantia</Link></li>
+              <li><Link href="/garantia" className="hover:text-orange-500 transition-colors">Garantia</Link></li>
               <li><Link href="#" className="hover:text-orange-500 transition-colors">Política de Devolução</Link></li>
             </ul>
           </div>

@@ -1,8 +1,7 @@
 export interface Product {
   slug: string;
   name: string;
-  price: number;
-  oldPrice?: number;
+
   rating: number;
   reviews: number;
   mktplaceLink: string;
@@ -30,14 +29,13 @@ export const PRODUCTS: Product[] = [
   {
     slug: 'engwe-m1',
     name: 'Engwe M1',
-    price: 5999,
-    oldPrice: 6999,
+
     rating: 4.9,
     reviews: 3,
-    mktplaceLink: 'https://mercadolivre.com.br',
+    mktplaceLink: 'https://www.mercadolivre.com.br/loja/engwe',
     tag: 'Premium',
-    description: 'A EP-2 Pro é a definição de versatilidade. Dobrável, potente e capaz de enfrentar qualquer terreno,'+
-     'é a companheira perfeita para o dia a dia na cidade ou escapadas no fim de semana.',
+    description: 'A EP-2 Pro é a definição de versatilidade. Dobrável, potente e capaz de enfrentar qualquer terreno,' +
+      'é a companheira perfeita para o dia a dia na cidade ou escapadas no fim de semana.',
     specs: {
       speed: '32 km/h',
       range: '120 km',
@@ -76,20 +74,22 @@ export const PRODUCTS: Product[] = [
       }
     ],
     images: {
-      verde: [
-        '/images/bikes/m1/engwe-m1-verde-001.png',
-        '/images/bikes/m1/engwe-m1-black-002.png',
+      preta: [
+        '/images/bikes/m1/Bike-eletrica-engwe-m1-black-01.jpeg',
+        '/images/bikes/m1/Bike-eletrica-engwe-m1-black-02.jpeg',
+        '/images/bikes/m1/Bike-eletrica-engwe-m1-black-03.jpeg',
+        '/images/bikes/m1/Bike-eletrica-engwe-m1-black-04.jpeg',
+        '/images/bikes/m1/Bike-eletrica-engwe-m1-black-05.jpeg',
       ]
     }
   },
   {
     slug: 'engwe-engine-x',
     name: 'Engwe Engine X',
-    price: 8499,
-    oldPrice: 9999,
+
     rating: 4.7,
     reviews: 4,
-    mktplaceLink: 'https://mercadolivre.com.br',
+    mktplaceLink: 'https://www.mercadolivre.com.br/loja/engwe',
 
     tag: 'Dobrável',
     description: 'Para quem exige o máximo. A Engine Pro traz suspensão integral, freios hidráulicos e um sistema de regeneração de energia (I-ERS) para uma experiência de pilotagem superior.',

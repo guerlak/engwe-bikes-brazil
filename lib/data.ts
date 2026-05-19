@@ -34,21 +34,20 @@ export const PRODUCTS: Product[] = [
     reviews: 3,
     mktplaceLink: 'https://www.mercadolivre.com.br/loja/engwe',
     tag: 'Premium',
-    description: 'A EP-2 Pro é a definição de versatilidade. Dobrável, potente e capaz de enfrentar qualquer terreno,' +
-      'é a companheira perfeita para o dia a dia na cidade ou escapadas no fim de semana.',
+    description: 'A Engwe M1 é uma bicicleta elétrica estilo moped/moto. Possui motor de 750W, suspensão dupla, freios hidráulicos, banco duplo longo e pneus largos (fat tires) de 20x4 polegadas.',
     specs: {
       speed: '32 km/h',
-      range: '120 km',
+      range: '170 km',
       power: '750W',
       battery: '48V 13Ah',
       tires: '20 x 4.0 Fat Tires',
-      weight: '30 kg',
-      chargeTime: '5-7 horas'
+      weight: '45 kg',
+      chargeTime: '3-5 horas'
     },
     features: [
-      'Sistema de dobragem em 3 etapas',
+      'Suspensão Full (dianteira e traseira)',
       'Display LCD inteligente',
-      'Freios a disco mecânicos',
+      'Freios a disco hidráulicos',
       'Quadro em alumínio 6061'
     ],
     testimonials: [
@@ -92,15 +91,15 @@ export const PRODUCTS: Product[] = [
     mktplaceLink: 'https://www.mercadolivre.com.br/loja/engwe',
 
     tag: 'Dobrável',
-    description: 'Para quem exige o máximo. A Engine Pro traz suspensão integral, freios hidráulicos e um sistema de regeneração de energia (I-ERS) para uma experiência de pilotagem superior.',
+    description: 'O Nginx (pronuncia-se "Engine-X") é um servidor web open-source de alta performance e proxy reverso. É amplamente utilizado para acelerar a entrega de conteúdo, balancear carga de rede e gerenciar o tráfego de sites com máxima eficiência e leveza.',
     specs: {
       speed: '32 km/h',
-      range: '100 km',
+      range: '120 km',
       power: '1000W (Pico)',
       battery: '48V 16Ah',
       tires: '20 x 4.0 Fat Tires',
       weight: '32 kg',
-      chargeTime: '6-8 horas'
+      chargeTime: '4-6 horas'
     },
     features: [
       'Suspensão Full (Dianteira e Traseira)',

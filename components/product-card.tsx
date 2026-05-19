@@ -6,8 +6,7 @@ import { Star, Zap, Battery, Gauge } from 'lucide-react';
 interface ProductProps {
   slug: string;
   name: string;
-  price: number;
-  oldPrice?: number;
+
   rating: number;
   reviews: number;
   mktplaceLink: string;

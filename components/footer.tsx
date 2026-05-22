@@ -17,13 +17,10 @@ export function Footer() {
               Redefinindo a mobilidade urbana e a aventura off-road com bicicletas elétricas inovadoras, potentes e acessíveis.
             </p>
             <div className="flex space-x-5">
-              <Link href="#" className="text-zinc-500 hover:text-orange-500 transition-colors">
+              <Link href="https://www.instagram.com/engwebrasil" className="text-zinc-500 hover:text-orange-500 transition-colors">
                 <Instagram className="w-5 h-5" />
               </Link>
-              <Link href="#" className="text-zinc-500 hover:text-orange-500 transition-colors">
-                <Facebook className="w-5 h-5" />
-              </Link>
-              <Link href="#" className="text-zinc-500 hover:text-orange-500 transition-colors">
+              <Link href="https://www.youtube.com/@engweofficial" className="text-zinc-500 hover:text-orange-500 transition-colors">
                 <Youtube className="w-5 h-5" />
               </Link>
             </div>
